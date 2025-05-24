@@ -1,0 +1,55 @@
+.app {
+  &-button {
+    display: block;
+    width: fit-content;
+    box-sizing: border-box;
+    padding: 1em 2em;
+    outline: none;
+    border: 2px solid var(--p-blue-500);
+    background-color: var(--p-blue-500);
+    color: white;
+    border-radius: 1em;
+    font-weight: bold;
+    box-shadow: 0 5px 0 var(--p-gray-300);
+
+    &-sm {
+      padding: .5em 1em;
+      font-size: 12px;
+    }
+
+    &-static {
+      display: block;
+      width: fit-content;
+      box-sizing: border-box;
+      padding: 1em 2em;
+      outline: none;
+      border: 2px solid var(--p-blue-500);
+      background-color: var(--p-blue-500);
+      color: white;
+      border-radius: 1em;
+      font-weight: bold;
+      box-shadow: 0 5px 0 var(--p-gray-300);
+      cursor: grabbing;
+      &:hover{
+
+      }
+    }
+
+    &:hover{
+      border: 2px solid var(--p-orange-500);
+      background-color: var(--p-orange-500);
+    }
+    &:active {
+      margin-top: 5px;
+      margin-bottom: -5px;
+      border: 2px solid var(--p-orange-600);
+      background-color: var(--p-orange-600);
+      box-shadow: 0 0 0 var(--p-gray-300);
+    }
+
+    &:disabled {
+      opacity: 50%;
+      pointer-events: none;
+    }
+  }
+}
