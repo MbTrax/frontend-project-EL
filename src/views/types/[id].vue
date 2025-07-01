@@ -1,9 +1,7 @@
 <script setup>
-import CartWord from "@/components/Cart/CartWord.vue";
 import {ref} from "vue";
 import draggable from 'vuedraggable'
 import router from "@/router/router.js";
-import normaliserService from "@/services/NormaliserService.js";
 import speakService from "@/services/speakService.js";
 import api from "@/api.js";
 import {useRoute} from "vue-router";
@@ -41,7 +39,6 @@ const check = async () => {
         groups.value[item].forEach(word => {
             const element = document.querySelector('#word-' + word.id);
             element.classList.remove('bg-green-500', 'border-green-500', 'bg-red-500', 'border-red-500');
-            console.log(data.value.words.find(tword => {return (tword.group === item && tword.word === word.value)}))
             if(data.value.words.find(tword => {return (tword.group === item && tword.word === word.value)})){
                 element.classList.add('bg-green-500', 'border-green-500');
                 score.value++

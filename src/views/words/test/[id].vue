@@ -1,5 +1,4 @@
 <script setup>
-import CartWord from "@/components/Cart/CartWord.vue";
 import {ref} from "vue";
 import router from "@/router/router.js";
 import speakService from "@/services/speakService.js";

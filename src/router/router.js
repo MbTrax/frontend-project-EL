@@ -1,4 +1,4 @@
-import {createMemoryHistory, createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import MainPage from "@/views/mainPage.vue";
 import Alphabet from "@/views/alphabet.vue";
 import Words from "@/views/words/index.vue";

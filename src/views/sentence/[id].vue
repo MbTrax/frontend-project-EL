@@ -1,5 +1,4 @@
 <script setup>
-import CartWord from "@/components/Cart/CartWord.vue";
 import {ref} from "vue";
 import draggable from 'vuedraggable'
 import router from "@/router/router.js";
@@ -12,21 +11,6 @@ import {useRoute} from "vue-router";
 const index = ref(0)
 const route = useRoute()
 let genIndex = 0
-let score = 0
-
-// const data = [
-//     {
-//         revert: true,
-//         translate: 'Я ем грушу?',
-//         correct: 'Am I eating a pear?',
-//     },
-//     {
-//         revert: false,
-//         translate: 'Am I eating a pear?',
-//         correct: 'Я ем грушу?',
-//     },
-// ]
-
 const data = ref([])
 const currentSentence = ref([])
 const wordsData = ref([])
@@ -67,14 +51,16 @@ const getListWords = (string)=>{
 
 const changeSentence = (tData) => {
     currentSentence.value = []
-    if (tData.revert) {
 
-        //Убираем последний знак при
-        if (!/^[,!?.]+$/.test(tData.ru[tData.ru.length - 1])){
-            tData.ru+= '.'
+    if (tData.revert) {
+        if (!/^[,!?.]+$/.test(tData.eng[tData.eng.length - 1])) {
+            tData.eng+='.'
         }
         wordsData.value = getListWords(tData.eng)
     } else {
+        if (!/^[,!?.]+$/.test(tData.ru[tData.ru.length - 1])) {
+            tData.ru+='.'
+        }
         wordsData.value = getListWords(tData.ru)
 
     }
@@ -83,7 +69,6 @@ const changeSentence = (tData) => {
 changeSentence(data.value[index.value])
 
 const goNext = () => {
-    score++
     index.value++
     changeSentence(data.value[index.value])
     canNext.value = false
@@ -94,7 +79,6 @@ const onClickWord = (word) => {
         speakService.speak(word)
     }
 
-    console.log(word)
 }
 
 const check = () => {
@@ -119,7 +103,6 @@ const check = () => {
         }
     });
     if (isFullyCorrect) {
-        score++
         speakService.speak(data.value[index.value].eng)
     }
     canNext.value = isFullyCorrect;
@@ -201,7 +184,7 @@ const check = () => {
                 <div class="text-3xl mb-5 font-bold">Вы молодец!</div>
                 <p class=" text-center w-25rem">Таким образом реализация намеченных плановых заданий представляет собой интересный эксперимент проверки </p>
                 <div class="font-medium">
-                    <span>У вас получилось составить</span> <span class="font-bold">{{score - 2}}</span> <span>предложения!</span>
+                    <span>У вас получилось составить</span> <span class="font-bold">{{data.length}}</span> <span>предложения!</span>
                 </div>
             </div>
             <button @click="router.push('/sentence')" class="app-button mx-auto block">Вернуться к остальным урокам</button>

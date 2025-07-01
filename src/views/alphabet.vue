@@ -1,6 +1,5 @@
 <script setup>
     import speakService from "@/services/speakService.js";
-    import router from "@/router/router.js";
 
     const alphabet = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
     const data = alphabet.split(' ')

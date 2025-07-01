@@ -11,8 +11,4 @@ export default new class AdminWordsService {
         return api.get('types', {search: term})
     }
 
-    deleteWordById() {
-
-    }
-
 }

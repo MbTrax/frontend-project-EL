@@ -21,22 +21,6 @@ const items = ref([
             },
         ]
     },
-    // {
-    //     label: 'Слова',
-    //     items: [
-    //         {
-    //             label: 'Создать',
-    //             icon: 'pi pi-plus',
-    //             route: '/admin/words/create'
-    //         },
-    //         {
-    //             label: 'Список',
-    //             icon: 'pi pi-list',
-    //             route: '/admin/words',
-    //         },
-    //
-    //     ]
-    // },
     {
         label: 'Картинка на сервере',
         icon: 'pi pi-images',

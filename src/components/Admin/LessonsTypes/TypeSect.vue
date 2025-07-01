@@ -1,6 +1,5 @@
 <script setup>
 
-import imageServices from "@/services/admin/imageServices.js";
 import Form from "@/views/admin/lessons/form.vue";
 import draggable from "vuedraggable";
 import {ref} from "vue";

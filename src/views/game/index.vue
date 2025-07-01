@@ -1,5 +1,5 @@
 <script setup>
-    import {ref, watch} from "vue";
+    import {ref} from "vue";
     import speakService from "@/services/speakService.js";
     import router from "@/router/router.js";
     import SmartArrayService from "@/services/smartArrayService.js";
